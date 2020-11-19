@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1584205420 source:g:\c++\function_f(x)\main.cpp
+	<iostream>
+
+1605778661 source:g:\c++\function_f(x)\f(x).cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<cmath>
+
