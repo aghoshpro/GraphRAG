@@ -2,10 +2,12 @@
 #include<cstdlib>
 #include<time.h>
 #include<cmath>
+#include <chrono>
+#include<windows.h>
 
 using namespace std;
 
-/* Functions */
+/* ****** F(x) *************************************************************************************** */
 
 void menu(){
     cout << "      Today's Menu" <<endl;
@@ -16,8 +18,29 @@ void menu(){
     cout << "4.ASCII Conversion" <<endl;
     cout << "5.Prime Number Detection" <<endl;
     cout << "6.Armstrong Number Detection" <<endl;
+    cout << "7.Colour Matrix" <<endl;
+    cout << "8.Change Text Color" <<endl;
+    cout << "9.Inverse Background" <<endl;
+    cout << "10.Infinite Colour Waterfall" <<endl;
     cout << "Exit(0)" << endl;
     cout << "--------------------------" << endl;
+}
+
+void changeBG(){
+        system("Color F0");
+    /*
+    1	Blue	9	Light Blue
+    2	Green	0	Black
+    3	Aqua	A	Light Green
+    4	Red 	B	Light Aqua
+    5	Purple	C	Light Red
+    6	Yellow	D	Light Purple
+    7	White	E	Light Yellow
+    8	Gray	F	Bright White
+
+    B for background Color(Light Aqua)
+    5 for text color(Purple)
+    */
 }
 
 void randomNumber(int n){
@@ -111,9 +134,79 @@ void isArmstrong(int n){
   cout <<""<<endl;
 }
 
+void Color(int color){
+ SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+ //COLORS LIST
+//1: Blue
+//2: Green
+//3: Cyan
+//4: Red
+//5: Purple
+//6: Yellow (Dark)
+//7: Default white
+//8: Gray/Grey
+//9: Bright blue
+//10: Bright green
+//11: Bright cyan
+//12: Bright red
+//13: Pink/Magenta
+//14: Yellow
+//15: Bright white
+//Numbers after 15 include background colours
+}
+
+void buildMatrix(int rows, int cols){
+
+    int M[rows][cols] = {0};
+
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            M[i][j] = rand()%100; // range: 0 to 100
+        }
+    }
+    cout << endl;
+    cout << "     Generated Matrix     " << endl;
+    cout << "-------------------------" << endl;
+
+    for(int i=0;i<rows;++i){
+        for(int j=0;j<cols;++j){
+            //Color(rand()%14);
+            //changeBG();
+            cout << M[i][j] << " ";
+        }
+     cout << endl;
+    }
+
+     cout << endl;
+
+    for(int i=0;i<rows;++i){
+        for(int j=0;j<cols;++j){
+           Color(rand()%14);
+           cout << char(219)<<char(219);
+        }
+     cout << endl;
+    }
+}
+
+void colorWaterfall(){
+
+ while(1){
+     for(int i=0;i<10;++i){
+        for(int j=0;j<10;++j){
+           Color(rand()%14);
+           cout << char(219)<<char(219);
+        }
+     cout << flush;
+    }
+  }
+}
+
 void msg(){
    cout << "Good Bye, Arka Dear..." << endl;
 }
+
+/* ****** END of F(x) ********************************************************************************** */
+
 
 int main()
 {
@@ -123,6 +216,7 @@ int main()
 
     int option {};
     int n {};
+    int rows, cols;
     char ch {};
 
     menu();    // Call to the menu
@@ -160,6 +254,24 @@ int main()
         case 6:  cout << "Enter a number = ";
                  cin >> n;
                  isArmstrong(n);
+                 break;
+
+        case 7:  cout << "Rows = ";
+                 cin >> rows;
+                 cout << "Columns = ";
+                 cin >> cols;
+                 buildMatrix(rows, cols);
+                 break;
+
+        case 8:  cout << "Enter a number (0-15) = ";
+                 cin >> n;
+                 Color(n);
+                 break;
+
+        case 9:  changeBG();
+                 break;
+
+        case 10: colorWaterfall();
                  break;
 
         case 0:  ans = 'N';
