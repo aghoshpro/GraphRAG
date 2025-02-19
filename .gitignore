@@ -1,4 +1,13 @@
-.venv
-.env
-.myvenv
+# Virtual Environment
+venv
+myvenv
+ragkg
 data
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
