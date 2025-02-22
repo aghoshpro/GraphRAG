@@ -1,0 +1,34 @@
+I want to build Knowledge Graph RAG application using Langchain, 
+Ollama, Neo4J Graph Database, where the user can upload structured and unstructured data .txt, .json, .pdf in the Streamlit UI and query it with natural language. Some details are as follows,
+
+Build Knowledge Graphs
+Construct graph representations from structured and unstructured data
+Use NetworkX for graph manipulation and visualization
+Migrate graphs to Neo4j for persistence and querying
+Extract entities and relationships from text using LLMs
+Implement Graph RAG
+Create hybrid search combining vector and graph capabilities
+Write graph queries using the Cypher query language
+Build vector indices over graph nodes
+Combine semantic search with graph traversal
+I have attached a plan that summaries what we aim to build,
+
+Following the architecture diagram above, we'll create a complete graph RAG system that:
+
+Constructs an initial knowledge graph from structured hotel data
+Enriches the graph with entities extracted from unstructured text
+Stores the graph in Neo4j with vector embeddings
+Implements hybrid search combining graph and vector capabilities
+Evaluates and compares different RAG approaches
+
+#############################################################################################
+
+I want to build Knowledge Graph RAG application using Langchain,
+Ollama, Neo4J Graph Database, where the user can upload structured and unstructured data .txt, .json, .pdf in the Streamlit UI and query it with natural language. Some details are as follows,
+
+Constructs an initial knowledge graph from structured data (.txt, .json, .csv)
+Enriches the graph with entities extracted from unstructured text (.pdf, )
+Stores the graph in Neo4j with vector embeddings
+Implements hybrid search combining graph and vector capabilities
+Sreamlit Web UI - Two colmun app with a sidebar. Left column display the knowledge graph cosntruted from the data along with st dataframe that shows the table for structured data. Right column where user will run query
+I want to share this project with other in github so lets start with a requirement.txt and project structure in README.md
