@@ -1,5 +1,7 @@
 # GraphRAG
 
+<img src="assets\GraphRAGFalkorDB.jpg">
+
 ## Installation
 
 ### Clone Repository
@@ -67,3 +69,18 @@ streamlit run app.py
 3. [LangChain ChatModels](https://python.langchain.com/docs/integrations/chat/)
 4. [LangChain Neo4J](https://neo4j.com/labs/genai-ecosystem/langchain/)
 5. [LangChain Community](https://api.python.langchain.com/en/latest/community_api_reference.html)
+6. [Langchain SQL](https://python.langchain.com/docs/how_to/sql_prompting/)
+
+### Knowledge Graph
+
+1. [Neo4J KG](https://neo4j.com/blog/genai/what-is-knowledge-graph/)
+2. [RDFvsPropKG](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/)
+3. [NLPGraph](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-020-00383-w/metrics)
+
+### Graph RAG
+1. [OntoText](https://www.ontotext.com/blog/matching-skills-and-candidates-with-graph-rag/)
+2. [falkordb](https://www.falkordb.com/blogs/what-is-graphrag/)
+3. [Supabase](https://supabase.com/blog/openai-embeddings-postgres-vector)
+
+### Colab
+1. [Colab](https://colab.research.google.com/drive/1MnZ6CeUNiVTrJGwYpJaduQBbCsNEVrbD?usp=sharing#scrollTo=iXmdiUY7NlQA)
