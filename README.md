@@ -32,6 +32,7 @@
   ```
 
 - Install dependencies:
+
   ```bash
   pip install --upgrade -r requirements.txt
   ```
@@ -47,14 +48,14 @@
   ```sh
   docker compose up
   ```
+
 ## 🕹️ Run
+
 ```bash
 streamlit run app.py
 ```
+
 - Select `llama3.2` as the model and start chatting.
-
-
-
 
 ### 🧪 OR Experiment with code if you want
 
@@ -78,9 +79,23 @@ streamlit run app.py
 3. [NLPGraph](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-020-00383-w/metrics)
 
 ### Graph RAG
+
 1. [OntoText](https://www.ontotext.com/blog/matching-skills-and-candidates-with-graph-rag/)
 2. [falkordb](https://www.falkordb.com/blogs/what-is-graphrag/)
 3. [Supabase](https://supabase.com/blog/openai-embeddings-postgres-vector)
 
 ### Colab
+
 1. [Colab](https://colab.research.google.com/drive/1MnZ6CeUNiVTrJGwYpJaduQBbCsNEVrbD?usp=sharing#scrollTo=iXmdiUY7NlQA)
+
+To find all districts of Bolzano with an elevation between 510-520 meters, you can use the following SPARQL query:\n\n
+
+```sparql
+SELECT ?distName ?elevation WHERE {
+  ?region rdfs:label ?distName .
+  ?region geo:asWKT ?distWkt .
+  FILTER (CONTAINS(?distWkt, 'Bolzano') AND CONTAINS(?distWkt,'510-520'))
+}
+```
+
+\n\nThis query filters the districts where the elevation is between 510-520 meters and contains the label "Bolzano".'

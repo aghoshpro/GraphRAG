@@ -1,0 +1,37 @@
+[[tabGroups.tabs]]
+
+name="Q12. Get SubDistricts"
+query="""
+##############################################################################################
+#### Query 12. Find all sub-districts of Munich where elevation is between 510-520 meters ####
+##############################################################################################
+
+PREFIX :	<https://github.com/aghoshpro/OntoRaster/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo:	 <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX lgdo: <http://linkedgeodata.org/ontology/>
+PREFIX rasdb: <https://github.com/aghoshpro/RasterDataCube/>
+
+SELECT ?distName ?elevation ?distWkt ?distWktColor ?distWktLabel {
+?region a :SubDistrict .
+?region rdfs:label ?distName .
+?region geo:asWKT ?distWkt .
+BIND(?distName AS ?distWktLabel)
+?gridCoverage a :Raster .
+?gridCoverage rasdb:rasterName ?rasterName .
+FILTER (CONTAINS(?rasterName, 'Elevation'))
+BIND ('2000-02-11T00:00:00+00:00'^^xsd:dateTime AS ?timeStamp)
+BIND (rasdb:rasSpatialAverage(?timeStamp, ?distWkt, ?rasterName) AS ?elevation)
+FILTER(?elevation > 515) .
+  BIND( 
+    IF(?elevation < 525, "blue" , 
+    IF(?elevation < 535, "#008AFF",
+    IF(?elevation < 545, "magenta",
+    IF(?elevation < 555, "red",
+    IF(?elevation < 565, "#C60000",
+    "black")))))
+    AS ?distWktColor).
+} 
+GROUP BY ?distName ?elevation ?distWkt ?distWktColor ?distWktLabel
+"""
