@@ -16,3 +16,5 @@ data
 __pycache__
 /__pycache/*
 .ipynb_checkpoints
+/lib
+*.js
