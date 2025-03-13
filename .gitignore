@@ -10,4 +10,11 @@ data
 .vscode/
 
 # Jupyter Notebook
+# Python
+*.pyc
+*.py[cod]
+__pycache__
+/__pycache/*
 .ipynb_checkpoints
+/lib
+*.js
