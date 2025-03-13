@@ -1,10 +1,24 @@
-# GraphRAG
+# Knowledge Graph RAG
 
-<img src="assets\GraphRAGFalkorDB.jpg">
+Knowledge Graph RAG is a special type of RAG system that combines the benefits of knowledge graphs with large language models (LLMs). In GraphRAG, the knowledge graph serves as an organised data structure of factual information, while the LLM functions as a reasoning engine, processing user questions, obtaining appropriate knowledge from the graph, and delivering logical responses.
 
-## Installation
+Recent scientific research [[1](https://arxiv.org/abs/2405.02048), [2](https://arxiv.org/pdf/2404.16130)] reveals that GraphRAG outperforms vector store-powered traditional RAG systems with more accurate responses in a cost effective and scalable way.
 
-### Clone Repository
+<img src="assets\grapgragg.jpg">
+
+Consider the following scenario to demonstrate GraphRAG's effectiveness: both a traditional RAG and GraphRAG are charged with identifying the top five themes in a dataset. The baseline RAG struggled to retrieve unrelated text and represent the essential themes accurately. In contrast, GraphRAG provided a concise and meaningful response, identifying the main ideas and supporting them with source material references.
+
+## Traditional RAG vs GraphRAG
+
+traditional RAG treats each document as an isolated unit, while graph RAG captures the relationships between entities mentioned in the documents. This structural understanding enables more sophisticated querying and better answers.
+
+<img src="assets\Vs.png">
+
+- Source: [Collab](https://colab.research.google.com/drive/1MnZ6CeUNiVTrJGwYpJaduQBbCsNEVrbD?usp=sharing#scrollTo=iXmdiUY7NlQA)
+
+## Environment Setup
+
+### 1. Clone Repository
 
 - Create a working directory and navigate to it:
 
@@ -18,7 +32,7 @@
   git clone https://github.com/aghoshpro/GraphRAG.git
   ```
 
-### 3. **Setup Local Environment**
+### 2. **Setup Local Environment**
 
 - Create a virtual environment `myvenv` inside the `./GraphRAG` folder and activate it:
 
@@ -43,7 +57,7 @@
 
 - Put them in `.env` file and add it to `.gitignore` so it will be not shared during git commit -->
 
-### 4. Start Neo4J Docker
+### 3. Start Neo4J Docker
 
   ```sh
   docker compose up
@@ -80,15 +94,16 @@ streamlit run app.py
 
 ### Graph RAG
 
-1. [OntoText](https://www.ontotext.com/blog/matching-skills-and-candidates-with-graph-rag/)
-2. [falkordb](https://www.falkordb.com/blogs/what-is-graphrag/)
-3. [Supabase](https://supabase.com/blog/openai-embeddings-postgres-vector)
+1. [Kdnuggets](https://www.kdnuggets.com/an-introduction-to-graph-rag)
+2. [OntoText](https://www.ontotext.com/blog/matching-skills-and-candidates-with-graph-rag/)
+3. [falkordb](https://www.falkordb.com/blogs/what-is-graphrag/)
+4. [PG Vector](https://supabase.com/blog/openai-embeddings-postgres-vector)
 
 ### Colab
 
 1. [Colab](https://colab.research.google.com/drive/1MnZ6CeUNiVTrJGwYpJaduQBbCsNEVrbD?usp=sharing#scrollTo=iXmdiUY7NlQA)
 
-To find all districts of Bolzano with an elevation between 510-520 meters, you can use the following SPARQL query:\n\n
+<!-- To find all districts of Bolzano with an elevation between 510-520 meters, you can use the following SPARQL query:\n\n
 
 ```sparql
 SELECT ?distName ?elevation WHERE {
@@ -98,4 +113,4 @@ SELECT ?distName ?elevation WHERE {
 }
 ```
 
-\n\nThis query filters the districts where the elevation is between 510-520 meters and contains the label "Bolzano".'
+\n\nThis query filters the districts where the elevation is between 510-520 meters and contains the label "Bolzano".' -->
