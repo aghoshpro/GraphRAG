@@ -32,5 +32,5 @@ langchain_core
 langchain-experimental
 unstructured>=0.16.12 
 onnx>=1.17.0
-protobuf==5.29.2
+protobuf==5.29.*
 pydantic==2.10.4
